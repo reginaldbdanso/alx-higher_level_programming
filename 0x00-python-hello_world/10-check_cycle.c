@@ -4,16 +4,21 @@
 
 int check_cycle(listint_t *list)
 {
-    listint_t *temp, *current;
-    
-	current = temp = list;
-	while (current->next != NULL)
+	listint_t *temp, *current;
+
+	temp = list;
+	while (temp->next != NULL)
 	{
-		current = current->next;
-		if(current == temp)
-			return (1);
-		/* temp = current->next; */
-		/* current->next = head; */
+		current = temp->next;
+		while (current->next != NULL)
+		{
+			if(current == temp)
+				return (1);
+			current = current->next;
+			/* temp = current->next; */
+			/* current->next = head; */
+		}
+		temp = temp->next;
 	}
 	return (0);
 }
