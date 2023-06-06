@@ -8,5 +8,3 @@ elif number == 0:
     print('is zero')
 elif number < 0:
     print('is negative')
-else:
-    print('TypeError')
