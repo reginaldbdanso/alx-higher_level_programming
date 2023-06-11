@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-def add(a, b):
-    return (a + b)
-
-
-def sub(a, b):
-    return (a - b)
-
-
-def mul(a, b):
-    return (a * b)
-
-
-def div(a, b):
-    return int(a / b)
+def print_matrix_integer(matrix=[[]]):
+    if matrix == [[]]:
+        print()
+    else:
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if j == len(matrix[i]) - 1:
+                    print('{}'.format(matrix[i][j]))
+                else:
+                    print('{} '.format(matrix[i][j]), end='')
