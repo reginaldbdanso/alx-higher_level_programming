@@ -1,14 +1,8 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
+def replace_in_list(my_list, idx, element):
+    if idx < 0:
+        return my_list
+    if idx >= len(my_list):
+        return my_list
 
-    if len(argv) == 1:
-        print("0 arguments.")
-    elif len(argv) == 2:
-        print("1 argument:")
-        for i in range(1, len(argv)):
-            print(f"{i}: {argv[i]}")
-    elif len(argv) > 2:
-        print(f"{len(argv) - 1} arguments:")
-        for i in range(1, len(argv)):
-            print(f"{i}: {argv[i]}")
+    return my_list[idx] = element
