@@ -1,5 +1,11 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from variable_load_5 import a
+def no_c(my_string):
+    new_string = ""
+    for char in my_string:
+        if char == "c" or char == "C":
+            pass
+        else:
+            new_string += char
+    
+    return new_string
 
-    print("{}".format(a))
