@@ -1,7 +1,7 @@
 if __name__ == "__main__":
 #!/usr/bin/python3
 import sys
-import 1-calculator.py
+import calculator_1.py
 if sys.argc != 3:
 print("Usage: ./100-my_calculator.py <a> <operator> <b>")
 exit(1)
