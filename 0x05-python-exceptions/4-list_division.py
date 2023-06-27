@@ -6,7 +6,8 @@ def list_division(my_list_1, my_list_2, list_length):
             try:
                 val_1 = my_list_1[i]
                 val_2 = my_list_2[i]
-                if isinstance(val_1, (int, float)) and isinstance(val_2, (int, float)):
+                if isinstance(val_1, (int, float
+                                      )) and isinstance(val_2, (int, float)):
                     try:
                         division_result = val_1 / val_2
                         result_list.append(division_result)
