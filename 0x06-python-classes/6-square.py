@@ -31,17 +31,10 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            if self.__position[1] > 0:
-                for num in range(self.__position[1]):
-                    print()
-            elif self.__position[1] == 0:
-                pass
-            for i in range(self.__size):
-                for j in range(self.__position[0]):
-                    print(' ', end='')
-                for k in range(self.__size):
-                    print('#', end='')
+            for i in range(self.__position[1]):
                 print()
+            for j in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
 
     @property
     def size(self):
@@ -72,9 +65,8 @@ class Square:
         """Sets private instance attribute.
 
         Raises:
-            TypeError - when size passed is not an integer.
-            ValueError - when size is less than 0."""
-        if not isinstance(value, tuple) and value < 0:
+            TypeError - when position isn't a tuple of 2 positive integers.
+            """
+        if not isinstance(value, tuple) or value[0] < 0 or value[1] < 0 or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__size = value
+        self.__size = value
