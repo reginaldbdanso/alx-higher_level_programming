@@ -12,7 +12,7 @@
 99
 >>> add_integer(3.14159, 2.71828)
 6
->>> add_integer(1 + "2")
+>>> add_integer(1, "2")
 Traceback (most recent call last):
 raise TypeError("a must be an integer or b must be an integer")
 TypeError: a must be an integer or b must be an integer
