@@ -12,3 +12,5 @@
 99
 >>> add_integer(3.14159, 2.71828)
 6
+>>> add_integer(1 + "2")
+Traceback (most recent call last):
