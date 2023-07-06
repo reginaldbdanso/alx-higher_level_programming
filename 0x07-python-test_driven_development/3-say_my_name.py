@@ -1,25 +1,12 @@
 #!/usr/bin/python3
-"""This module defines a square"""
+"""This is the say_my_name module"""
 
 
-class Square:
-    """This class defines a square."""
-
-    def __init__(self, size=0):
-        """Initialize an instance of a square
-
-        Args:
-            size - size of the square
-            and defaults to 0 if nothing is passed.
-            Must be an integer not less than 0.
-
-        Raises:
-            TypeError - when size passed is not an integer.
-            ValueError - when size is less than 0."""
-
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+def say_my_name(first_name, last_name=""):
+    """ prints my name"""
+    if not isinstance(first_name, str) or not isinstance(last_name, str):
+        raise TypeError("first_name must be a string or last_name must be a string")
+    if last_name:
+        print("My name is", first_name, last_name)
+    else:
+        print("My name is", first_name)
