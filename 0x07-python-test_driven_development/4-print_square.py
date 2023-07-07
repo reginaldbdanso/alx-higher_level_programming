@@ -2,28 +2,15 @@
 
 """This module defines the Square class."""
 
-
-class Square:
-    """This class defines a square."""
-
-    def __init__(self, size=0):
-        """Initialize the Square object.
-
-         Args:
-            size - size of the square
-            and defaults to 0 if nothing is passed.
-            Must be an integer not less than 0.
-
-        Raises:
-            TypeError - when size passed is not an integer.
-            ValueError - when size is less than 0."""
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
+def print_square(size):
+    if not isinstance(size, int):
+        if isinstance(size, float) and size.is_integer():
+            size = int(size)
         else:
-            self.__size = size
+            raise TypeError("size must be an integer")
 
-    def area(self):
-        """Calculates and returns the area of the square."""
-        return self.__size * self.__size
+    if size < 0:
+        raise ValueError("size must be >= 0")
+
+    for _ in range(size):
+        print("#" * size)
