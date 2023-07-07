@@ -1,50 +1,38 @@
 #!/usr/bin/python3
+"""The print square module."""
+import unittest
+from your_module import max_integer
 
-"""This module defines the Square class."""
 
+class MaxIntegerTestCase(unittest.TestCase):
+    def test_empty_list(self):
+        result = max_integer([])
+        self.assertIsNone(result, "Empty list should return None")
 
-class Square:
-    """This class defines a square."""
+    def test_single_element_list(self):
+        result = max_integer([5])
+        self.assertEqual(result, 5, "Single element list" +
+                        " should return the element itself")
 
-    def __init__(self, size=0):
-        """Initialize the Square object.
+    def test_positive_numbers(self):
+        result = max_integer([1, 2, 3, 4, 5])
+        self.assertEqual(result, 5, "List of" +
+                         " positive numbers should return the maximum")
 
-         Args:
-            size - size of the square
-            defaults to 0 if nothing is passed.
-            Must be an integer not less than 0."""
+    def test_negative_numbers(self):
+        result = max_integer([-1, -2, -3, -4, -5])
+        self.assertEqual(result, -1, "List of negative"
+                         + " numbers should return the maximum")
 
-        self.__size = size
+    def test_mixed_numbers(self):
+        result = max_integer([-5, 0, 10, -2, 7])
+        self.assertEqual(result, 10, "List of mixed positive"
+                         + " and negative numbers should return the maximum")
 
-    def area(self):
-        """Calculates and returns the area of a square."""
-        return self.__size * self.__size
+    def test_duplicate_numbers(self):
+        result = max_integer([3, 2, 5, 2, 5])
+        self.assertEqual(result, 5, "List with"
+                         + " duplicate numbers should return the maximum")
 
-    def my_print(self):
-        """Prints in stdout the square with character #"""
-        if self.__size == 0:
-            print()
-        else:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
-
-    @property
-    def size(self):
-        """Retrieves private instance attribute."""
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """Sets private instance attribute.
-
-         Raises:
-            TypeError - when size passed is not an integer.
-            ValueError - when size is less than 0."""
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+if __name__ == '__main__':
+    unittest.main()

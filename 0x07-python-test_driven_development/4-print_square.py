@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""The print square module."""
 
-"""This module defines the Square class."""
 
 def print_square(size):
+    """This prints a square with the character # """
     if not isinstance(size, int):
         if isinstance(size, float) and size.is_integer():
             size = int(size)
