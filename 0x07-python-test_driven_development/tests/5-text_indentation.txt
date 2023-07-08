@@ -1,0 +1,18 @@
+text_indentation = __import__(5-text_indentation.py).text_indentation
+
+>>> test_text_indentation()
+    Hello
+<BLANKLINE>
+    How are you
+<BLANKLINE>
+    I hope you're doing well!
+<BLANKLINE>
+
+    >>> test_text_indentation()
+    This is a test
+<BLANKLINE>
+    Another test
+<BLANKLINE>
+    Yes
+<BLANKLINE>
+    No
