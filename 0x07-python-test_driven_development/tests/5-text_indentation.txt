@@ -1,18 +1,32 @@
 test_text_indentationtext_indentation = __import__(5-text_indentation.py).text_indentation
 
->>> test_text_indentation()
-    Hello
+>>> text_indentation('Hello. How are you? I hope you're doing well!:')
+Hello
 <BLANKLINE>
-    How are you
+How are you
 <BLANKLINE>
-    I hope you're doing well!
+I hope you're doing well!
 <BLANKLINE>
 
-    >>> test_text_indentation()
-    This is a test
+>>> text_indentation(.?:)
+.
 <BLANKLINE>
-    Another test
+?
 <BLANKLINE>
-    Yes
+:
 <BLANKLINE>
-    No
+
+>>> text_indentation(1)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(2.8)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(False)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
