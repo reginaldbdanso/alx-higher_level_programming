@@ -1,24 +1,9 @@
 #!/usr/bin/python3
-"""
-module validates whether or not an
-object is exactly an instance of a class
-"""
+"""The append_write module"""
 
 
-def is_same_class(obj, a_class):
-    """
-    is_name_class - checks if obj is the same as class
-
-    Args:
-        obj - passed object to be checked
-        a_class - passed class to be compared
-
-    Return:
-        True if the object is exactly as class
-        otherwise, False.
-    """
-    if type(obj) is a_class:
-        return True
-
-    else:
-        return False
+def append_write(filename="", text=""):
+    """append_write funcion definition"""
+    with open(filename, "a", encoding="utf-8") as f:
+        f.write(text)
+        return len(text)
