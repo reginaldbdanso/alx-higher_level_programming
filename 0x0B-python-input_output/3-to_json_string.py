@@ -7,5 +7,4 @@ The to_json_string module"""
 
 def to_json_string(my_obj):
     """to_json_string funcion definition"""
-    json_string = json.dumps(my_obj)
-    return (json_string)
+    return json.dumps(my_obj)
