@@ -1,15 +1,9 @@
 #!/usr/bin/python3
-"""
-MyList module
-"""
+"""The write_file module"""
 
 
-class MyList(list):
-    """
-    MyList child class inherits from the
-    list base class
-    """
-
-    def print_sorted(self):
-        """prints list in a sorted order"""
-        print(sorted(self))
+def write_file(filename="", text=""):
+    """write_file funcion definition"""
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(text)
+        return len(text)
