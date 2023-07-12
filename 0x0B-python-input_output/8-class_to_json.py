@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
 json module imported
-The add_item module
+The class_to_json module
 """
 
 
 def class_to_json(obj):
     """
-    add_item - adds all items and saves to a JSON file
+    class_to_json - returns the dictionary description
+    with simple data structure  for JSON serialization of an object:
     Args:
         @args: arguments that to be added.
         @filename: file to be updated
