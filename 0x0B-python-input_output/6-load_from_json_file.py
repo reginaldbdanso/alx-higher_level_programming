@@ -9,8 +9,7 @@ import json
 def load_from_json_file(filename):
     """
     load_from_json_file funcion
-    returns an object (Python data structure)
-    represented by a JSON string
+    creates an Object from a “JSON file”
 
     Args:
         @filename: filename or path

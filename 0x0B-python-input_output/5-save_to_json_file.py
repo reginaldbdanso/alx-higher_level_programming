@@ -9,8 +9,8 @@ import json
 def save_to_json_file(my_obj, filename):
     """
     save_to_json_file funcion
-    returns an object (Python data structure)
-    represented by a JSON string
+    writes an Object to a text file,
+    using a JSON representation:
 
     Args:
         @my_obj: object to be converted
