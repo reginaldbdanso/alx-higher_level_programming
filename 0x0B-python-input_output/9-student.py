@@ -30,9 +30,5 @@ class Student:
             @self: instance.
         """
 
-        json_obj = {
-            "first_name": self.first_name,
-            "last_name": self.last_name,
-            "age": self.age
-        }
-        return json_obj
+        return self.__dict__
+
