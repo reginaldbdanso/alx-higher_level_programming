@@ -13,8 +13,8 @@ def add_item(args, filename):
     """
         add_item - adds all items and saves to a JSON file
         Args:
-        @args: arguments that to be added.
-        @filename: file to be updated
+            @args: arguments that to be added.
+            @filename: file to be updated
     """
     try:
         items = load_from_json(filename)
