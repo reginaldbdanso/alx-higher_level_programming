@@ -1,25 +1,38 @@
 #!/usr/bin/python3
-"""the rectangle module"""
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+"""
+a class Student that defines a student
+"""
 
 
-class Rectangle(BaseGeometry):
-    """defines a rectangle class"""
-    def __init__(self, width, height):
-        """constructor for a rectangle instance"""
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+class Student:
+    """
+    This is the student class
+    """
 
-        self.__width = width
-        self.__height = height
-
-    def area(self):
-        """returns the area of a rectangle"""
-        return self.__width * self.__height
-
-    def __str__(self):
+    def __init__(self, first_name, last_name, age):
         """
-        returns a string representation
-        of the rectangle object
+        The init constructor
+        Args:
+            @self: instance
+            @first_name: first name string
+            @last_name: last name string
+            @age: age string
         """
-        return f"[{type(self).__name__}] {self.__width}/{self.__height}"
+
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        """
+        The to_json function
+        Args:
+            @self: instance.
+        """
+
+        json_obj = {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "age": self.age
+        }
+        return json_obj
