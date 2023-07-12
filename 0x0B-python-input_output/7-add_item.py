@@ -1,17 +1,32 @@
 #!/usr/bin/python3
-""" a BaseGeometry class"""
+"""
+json module imported
+The add_item module
+"""
+import json
+save_to_json = __import__('5-save_to_json_file').save_to_json_file
+load_from_json = __import__('6-load_from_json_file').\
+    load_from_json_file
 
 
-class BaseGeometry:
-    """defines a base geometry class"""
-    def area(self):
-        """raises an exception"""
-        raise Exception("area() is not implemented")
+def add_item(args, filename):
+    """
+        add_item - adds all items and saves to a JSON file
+        Args:
+        @args: arguments that to be added.
+        @filename: file to be updated
+    """
+    try:
+        items = load_from_json(filename)
 
-    def integer_validator(self, name, value):
-        """validate that value is an int and not less than 0"""
-        if type(value) != int:
-            raise TypeError(f"{name} must be an integer")
+    except FileNotFoundError:
+        items = []
 
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+    for item in args:
+        items.append(item)
+    save_to_json(items, filename)
+
+if __name__ == "__main__":
+    args = sys.argv[1:]
+    filename = "add_item.json"
+    add_item(args, filename)
