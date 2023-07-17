@@ -1,12 +1,22 @@
 #!/usr/bin/python3
 """
-my_list module inherits from list and
-prints out in sorted order
+This is the base class from which
+all other classes will inherit
 """
 
 
-class MyList(list):
-    """MyList class inherits from list"""
-    def print_sorted(self):
-        """prints list in sorted order"""
-        print(sorted(self))
+class Base:
+    """
+    Base class definition
+    """
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """
+        constructor for the class
+        """
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
