@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 """
-This is the module that contains
-the rectangle class
-It will inherit from Base
+module defines a rectangle class
+and inherits from base
 """
 from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    Rectangle class definition
-    """
+    """this defines a rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        constructor for the rectangle class
-        """
+        """constructor for the rectangle class"""
         self.width = width
         self.height = height
         self.x = x
@@ -23,27 +18,27 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Getter for width"""
+        """retrieves the value for width"""
         return self.__width
 
     @property
     def height(self):
-        """Getter for height"""
+        """retrieves the value for height"""
         return self.__height
 
     @property
     def x(self):
-        """Getter for the value of x"""
+        """retrieves the value for x"""
         return self.__x
 
     @property
     def y(self):
-        """Getter for the value of y"""
+        """retrieves the value for y"""
         return self.__y
 
     @width.setter
     def width(self, value):
-        """Setter for width"""
+        """sets the value for width"""
         if (type(value) is not int):
             raise TypeError("width must be an integer")
 
@@ -54,7 +49,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Setter for height"""
+        """sets the value for height"""
         if (type(value) is not int):
             raise TypeError("height must be an integer")
 
@@ -65,7 +60,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Setter for the value of x"""
+        """sets the value for x"""
         if (type(value) is not int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -75,7 +70,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Setter for the value of y"""
+        """sets the value for y"""
         if (type(value) is not int):
             raise TypeError("y must be an integer")
 
@@ -104,8 +99,10 @@ class Rectangle(Base):
         defines a a string format
         representation of the class
         """
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
-                            {self.__width}/{self.__height}"
+        return (
+            f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+            f"{self.__width}/{self.__height}"
+        )
 
     def update(self, *args, **kwargs):
         """update assigns an argument to attribute"""
@@ -121,3 +118,13 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a rectangle"""
+        return {
+            'id': self.id,
+            'width': self.__width,
+            'height': self.__height,
+            'x': self.__x,
+            'y': self.__y
+        }
