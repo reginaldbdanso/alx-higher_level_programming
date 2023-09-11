@@ -1,3 +1,3 @@
 #!/usr/bin/node
-myVar = 'JavaScript is amazaing';
+let myVar = 'JavaScript is amazaing';
 console.log(myVar);
