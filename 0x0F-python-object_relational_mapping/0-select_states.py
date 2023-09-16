@@ -1,51 +1,29 @@
 #!/usr/bin/python3
+"""
+script that lists all states from the database hbtn_0e_0_usa
+"""
+
 import MySQLdb
-import sys
-"""
-script that lists all states from
-the database hbtn_0e_0_usa
-"""
+from sys import argv
 
 
-def list_states(username, password, database_name):
+if __name__ == '__main__':
     """
-    Function that lists all states from
-    the database hbtn_0e_0_usa
+    Access the database and retrive
+    the states from the database.
     """
-    try:
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=database_name
-        )
-        cursor = db.cursor()
+    db_connect = MySQLdb.connect(
+        host="localhost",
+        user=argv[1],
+        port=3306,
+        passwd=argv[2],
+        db=argv[3])
 
-        # Execute the SQL query to fetch
-        # states in ascending order by states.id
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    db_cursor = db_connect.cursor()
 
-        # Fetch all the rows
-        rows = cursor.fetchall()
+    db_cursor.execute("SELECT * FROM states")
 
-        # Display the results
-        for row in rows:
-            print(row)
+    rows_selected = db_cursor.fetchall()
 
-        # Close the cursor and database connection
-        cursor.close()
-        db.close()
-
-    except MySQLdb.Error as e:
-        print("Error connecting to MySQL:", e)
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database_name>")
-    else:
-        username, password, database_name = sys.argv[1], sys.argv[2],
-        sys.argv[3]
-        list_states(username, password, database_name)
+    for row in rows_selected:
+        print(row)
