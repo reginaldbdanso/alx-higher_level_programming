@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get 
+    Access to the database and get
     a state from the database.
     """
 
@@ -28,3 +28,4 @@ if __name__ == "__main__":
         print('{0}: {1}'.format(state.id, state.name))
     else:
         print("Nothing")
+    session.close()
