@@ -10,7 +10,7 @@ import sys
 if __name__ == "__main__":
     # Get the url from the command line
     url = sys.argv[1]
-    # Send a request to the URL
+    # Send a request to the URL and get the response
     with urllib.request.urlopen(url) as response:
         # Get the header of the response
         header = response.info()
