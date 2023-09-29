@@ -13,7 +13,9 @@ if __name__ == "__main__":
     # Get the url from the command line
     url = sys.argv[1]
     try:
+        # Send the request and get the response
         with urllib.request.urlopen(url) as response:
             print(response.read().decode('utf-8'))
+    # Manage the error
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
