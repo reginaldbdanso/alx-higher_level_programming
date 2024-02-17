@@ -22,10 +22,15 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
->>> add_integer(1e1000)
+>>> add_integer(float('inf'))
 Traceback (most recent call last):
 ...
-OverflowError: int too large to convert to float
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('-inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
 
 >>> add_integer(float('nan'))
 Traceback (most recent call last):
